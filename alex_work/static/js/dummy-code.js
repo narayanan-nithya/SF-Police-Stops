@@ -170,3 +170,10 @@ data.forEach(element =>  {
 
 });
 
+////////////////
+
+
+<!-- My JS Code-->
+<script type="text/javascript" src="../static/js/logic.js"></script>
+
+

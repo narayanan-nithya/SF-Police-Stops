@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 mongo = PyMongo(app, uri='mongodb://localhost:27017/test_db')
 
+mongo2 = PyMongo(app, uri='mongodb://localhost:27017/police_db')
+
 @app.route('/')
 
 def welcome():
@@ -18,8 +20,9 @@ def welcome():
         f"Available Routes:<br/>"
         f"/get-data<br/>"
         f"/read-data<br/>"
-        f"/test-data<br/>"
-        f"/visualize<br/>"
+        f"/mongo2-data<br/>"
+        f"/visual<br/>"
+        f"/visual2<br/>"
 
     )
 
@@ -37,11 +40,11 @@ def index():
     
 
 
-# @app.route('/read-data', methods=['GET','POST'])
+# Get Data for Jan 2015 Geo Map
 @app.route('/read-data')
 def connect():
 
-#  # Find one record of data from the mongo database
+# Find one record of data from the mongo database
     stop_data = mongo.db.collection
 
     db_data = []
@@ -54,12 +57,21 @@ def connect():
     return jsonify(db_data)
 
 
-  
-@app.route('/test-data')
+
+# Geo Map with January 2015 Data
+@app.route('/visual')
+def show():
+
+ return render_template('index.html')
+
+
+
+# Get Data from 2015 Data for Bar Plots
+@app.route('/mongo2-data')
 def testconnect():
 
-#  # Find one record of data from the mongo database
-    stop_data = mongo.db.collection
+# Find one record of data from the mongo database
+    stop_data = mongo2.db.collection
 
     db_data = []
 
@@ -68,13 +80,18 @@ def testconnect():
         db_data.append(stop)
     
     # Return template and data
-    return render_template('test.html', data=db_data)
+    return jsonify(db_data)
 
 
-@app.route('/visualize')
-def show():
 
- return render_template('index.html')
 
+# Potential Interactive Bar Chart
+@app.route('/visual2')
+def show2():
+
+ return render_template('visual2.html')
+
+
+# Boiler plate 
 if __name__ == "__main__":
     app.run(debug=True)
