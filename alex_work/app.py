@@ -8,7 +8,7 @@ from flask import request
 
 app = Flask(__name__)
 
-mongo = PyMongo(app, uri='mongodb://localhost:27017/police_db')
+mongo = PyMongo(app, uri='mongodb://localhost:27017/test_db')
 
 @app.route('/')
 
