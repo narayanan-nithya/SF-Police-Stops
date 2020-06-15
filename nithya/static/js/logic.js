@@ -58,8 +58,8 @@ d3.json("sf_police_data.json" ,function(data) {
   var arrestedA = asianData.filter(arrestedAsian);
 
   var myMap = L.map("map", {
-    center: [37.09, -95.71],
-    zoom: 5
+    center: [37.76, -122.431297],
+    zoom: 13
   });
 
  
@@ -67,43 +67,51 @@ d3.json("sf_police_data.json" ,function(data) {
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-    id: 'mapbox/light-v10',
+    id: "mapbox/dark-v10",
       accessToken: API_KEY
     }).addTo(myMap);
 
-    var redMarker = L.ExtraMarkers.icon({
-      icon: 'fa-coffee',
-      markerColor: 'red',
-      shape: 'square',
-      prefix: 'fa'
-    });
+    
 
   for (var i = 0; i < arrestedH.length; i++) {
     var location = arrestedH[i];
-        L.marker(location.coordinates)
+        L.circle((location.coordinates),{
+          color: "green",
+          fillColor: "green",
+          fillOpacity: 0.50,
+          radius: 50})
         .addTo(myMap).bindPopup("<h3>Age: "+ location.age +"</h3><h3>Sex: " + location.sex +
         "</h3><hr><h3>Arrest: " + location.arrest + "</h3><hr><h3>Race:" + location.race + "</h3>");
   }
   for (var i = 0; i < arrestedB.length; i++) {
     var location = arrestedB[i];
-        L.marker(location.coordinates)
-        .bindPopup("<h3>Age: "+ location.age +"</h3><h3>Sex: " + location.sex +
-        "</h3><hr><h3>Arrest: " + location.arrest + "</h3><hr><h3>Race:" + location.race + "</h3>")
-          .addTo(myMap);
-  }
+        L.circle((location.coordinates),{
+          color: "orange",
+          fillColor: "orange",
+          fillOpacity: 0.50,
+          radius: 50})
+          .addTo(myMap).bindPopup("<h3>Age: "+ location.age +"</h3><h3>Sex: " + location.sex +
+          "</h3><hr><h3>Arrest: " + location.arrest + "</h3><hr><h3>Race:" + location.race + "</h3>");
+      }
   for (var i = 0; i < arrestedW.length; i++) {
     var location = arrestedW[i];
-        L.marker(location.coordinates,{
-          icon: redMarker})
+        L.circle((location.coordinates),{
+          color: "blue",
+          fillColor: "blue",
+          fillOpacity: 0.50,
+          radius: 50})
           .addTo(myMap).bindPopup("<h3>Age: "+ location.age +"</h3><h3>Sex: " + location.sex +
           "</h3><hr><h3>Arrest: " + location.arrest + "</h3><hr><h3>Race:" + location.race + "</h3>");
   }
   for (var i = 0; i < arrestedA.length; i++) {
     var location = arrestedA[i];
-        L.marker(location.coordinates)
-        .bindPopup("<h3>Age: "+ location.age +"</h3><h3>Sex: " + location.sex +
-        "</h3><hr><h3>Arrest: " + location.arrest + "</h3><hr><h3>Race:" + location.race + "</h3>")
-          .addTo(myMap);
+        L.circle((location.coordinates),{
+          color: "pink",
+          fillColor: "pink",
+          fillOpacity: 0.50,
+          radius: 50})
+          .addTo(myMap).bindPopup("<h3>Age: "+ location.age +"</h3><h3>Sex: " + location.sex +
+          "</h3><hr><h3>Arrest: " + location.arrest + "</h3><hr><h3>Race:" + location.race + "</h3>");
   }
 
 });
