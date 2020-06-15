@@ -1,7 +1,7 @@
 
 var results = []
 
-d3.json("test.json" ,function(data) {
+d3.json("sf_police_data.json" ,function(data) {
   // Loop through mongodb data; combine 'lat'/'lng' columns into coordinates; retrieve other data.
   data.forEach(element =>  {
         var result = {}
