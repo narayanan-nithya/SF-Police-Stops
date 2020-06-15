@@ -1,4 +1,4 @@
-var url = "http://127.0.0.1:5000/read-data";
+var url = "http://127.0.0.1:5000/mongo1-data";
 
 var results = []
 

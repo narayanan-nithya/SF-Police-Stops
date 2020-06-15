@@ -8,7 +8,7 @@ from flask import request
 
 app = Flask(__name__)
 
-mongo = PyMongo(app, uri='mongodb://localhost:27017/test_db')
+mongo1 = PyMongo(app, uri='mongodb://localhost:27017/test_db')
 
 mongo2 = PyMongo(app, uri='mongodb://localhost:27017/police_db')
 
@@ -18,34 +18,20 @@ def welcome():
     return(
         f"Welcome to my home page!<br/>"
         f"Available Routes:<br/>"
-        f"/get-data<br/>"
-        f"/read-data<br/>"
+        f"/mongo1-data<br/>"
         f"/mongo2-data<br/>"
-        f"/visual<br/>"
+        f"/visual1<br/>"
         f"/visual2<br/>"
 
     )
 
 
-@app.route('/get-data')
-
-def index():
-
-#  # Find one record of data from the mongo database
-    stop_data = mongo.db.collection
-
-    result = stop_data.find({}, {'_id': False})
-
-    return dumps(result)
-    
-
-
 # Get Data for Jan 2015 Geo Map
-@app.route('/read-data')
+@app.route('/mongo1-data')
 def connect():
 
 # Find one record of data from the mongo database
-    stop_data = mongo.db.collection
+    stop_data = mongo1.db.collection
 
     db_data = []
 
@@ -59,10 +45,10 @@ def connect():
 
 
 # Geo Map with January 2015 Data
-@app.route('/visual')
+@app.route('/visual1')
 def show():
 
- return render_template('index.html')
+ return render_template('visual1.html')
 
 
 

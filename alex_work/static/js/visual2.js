@@ -157,8 +157,8 @@ function initBar() {
     var data = [trace1];
     
     var layout = {
-      title: "Total Number of Arrests by Ethncity",
-      xaxis: { title: "Ethncity"},
+      title: "Total Number of Arrests by Ethnicity",
+      xaxis: { title: "Ethnicity"},
       yaxis: { title: "# of Police Stops"}
     };
     
@@ -337,8 +337,8 @@ function buildBar () {
     var data = [trace1];
     
     var layout = {
-      title: "Total Number of Arrests by Ethncity",
-      xaxis: { title: "Ethncity"},
+      title: "Total Number of Arrests by Ethnicity",
+      xaxis: { title: "Ethnicity"},
       yaxis: { title: "# of Arrests"}
     };
     
@@ -457,8 +457,8 @@ function staticBar() {
     var data = [trace1];
     
     var layout = {
-      title: "Total Number of Police Stops by Ethncity",
-      xaxis: { title: "Ethncity"},
+      title: "Total Number of Police Stops by Ethnicity",
+      xaxis: { title: "Ethnicity"},
       yaxis: { title: "# of Police Stops"}
     };
     
@@ -595,8 +595,8 @@ function dynamicBar () {
     var data = [trace1];
     
     var layout = {
-      title: "Total Number of Police Stops by Ethncity",
-      xaxis: { title: "Ethncity"},
+      title: "Total Number of Police Stops by Ethnicity",
+      xaxis: { title: "Ethnicity"},
       yaxis: { title: "# of Police Stops"}
     };
     
