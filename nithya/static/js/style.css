@@ -12,14 +12,23 @@ html {
   color: #555;
   font-weight: bold;
   padding: 6px 8px;
-  background: #fff;
+  background: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
+
+.legend .hsp {
+  color:green;
+}
+
+.legend .bl {
+  color:orange;
+}
+
+.legend .wh {
+  color: blue;
+}
+
+.legend .asn {
+  color: magenta;
 }
