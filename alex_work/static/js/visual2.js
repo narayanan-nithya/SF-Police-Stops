@@ -146,24 +146,48 @@ function initBar() {
 
 
 
-    // Plotting Bar Chart
-    var trace1 = {
-      x: ["White", "Hispanic", "Black", "Asian/Pacific Islander",
-          "Other"],
-      y: [aW, ah, aB, aA, aO],
-      type: "bar"
-    };
-    
-    var data = [trace1];
-    
-    var layout = {
-      title: "Total Number of Arrests by Ethnicity",
-      xaxis: { title: "Ethnicity"},
-      yaxis: { title: "# of Police Stops"}
-    };
-    
-    Plotly.newPlot("bar", data, layout);
 
+
+
+//         ///// CHARTIS TEST //////////////////
+
+
+var ctx = document.getElementById('myChart1');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["White", "Hispanic", "Black", "Asian/Pac-Islander",
+        "Other"],
+        datasets: [{
+            label: "Total Number of Arrests by Ethnicity",
+            data: [aW, ah, aB, aA, aO],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.9)',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+                'rgba(75, 192, 192, 0.9)',
+                'rgba(153, 102, 255, 0.9)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 
 
   
@@ -324,25 +348,43 @@ function buildBar () {
 
 
 
+    var ctx = document.getElementById('myChart1');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["White", "Hispanic", "Black", "Asian/Pac-Islander",
+            "Other"],
+            datasets: [{
+                label: "Total Number of Arrests by Ethnicity",
+                data: [whiteGenderStops, hispanicGenderStops, blackGenderStops, asianPacGenderStops, otherGenderStops],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.9)',
+                    'rgba(54, 162, 235, 0.9)',
+                    'rgba(255, 206, 86, 0.9)',
+                    'rgba(75, 192, 192, 0.9)',
+                    'rgba(153, 102, 255, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 
-
-    // Plotting Bar Chart
-    var trace1 = {
-      x: ["White", "Hispanic", "Black", "Asian/Pacific Islander",
-          "Other"],
-      y: [whiteGenderStops, hispanicGenderStops, blackGenderStops, asianPacGenderStops, otherGenderStops],
-      type: "bar"
-    };
-    
-    var data = [trace1];
-    
-    var layout = {
-      title: "Total Number of Arrests by Ethnicity",
-      xaxis: { title: "Ethnicity"},
-      yaxis: { title: "# of Arrests"}
-    };
-    
-    Plotly.newPlot("bar", data, layout);
 
 
 
@@ -446,23 +488,45 @@ function staticBar() {
 
 
 
-    // Plotting Bar Chart
-    var trace1 = {
-      x: ["White", "Hispanic", "Black", "Asian/Pacific Islander",
-          "Other"],
-      y: [whiteStops, hispanicStops, blackStops, asianPacStops, otherStops],
-      type: "bar"
-    };
-    
-    var data = [trace1];
-    
-    var layout = {
-      title: "Total Number of Police Stops by Ethnicity",
-      xaxis: { title: "Ethnicity"},
-      yaxis: { title: "# of Police Stops"}
-    };
-    
-    Plotly.newPlot("gauge", data, layout);
+
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["White", "Hispanic", "Black", "Asian/Pac-Islander",
+            "Other"],
+            datasets: [{
+                label: "Total Number of Police Stops by Ethnicity",
+                data: [whiteStops, hispanicStops, blackStops, asianPacStops, otherStops],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.9)',
+                    'rgba(54, 162, 235, 0.9)',
+                    'rgba(255, 206, 86, 0.9)',
+                    'rgba(75, 192, 192, 0.9)',
+                    'rgba(153, 102, 255, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
 
 });
 
@@ -583,24 +647,46 @@ function dynamicBar () {
 
 
 
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["White", "Hispanic", "Black", "Asian/Pac-Islander",
+            "Other"],
+            datasets: [{
+                label: "Total Number of Police Stops by Ethnicity",
+                data: [whiteGenderStops, hispanicGenderStops, blackGenderStops, asianPacGenderStops, otherGenderStops],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.9)',
+                    'rgba(54, 162, 235, 0.9)',
+                    'rgba(255, 206, 86, 0.9)',
+                    'rgba(75, 192, 192, 0.9)',
+                    'rgba(153, 102, 255, 0.9)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 
-    // Plotting Bar Chart
-    var trace1 = {
-      x: ["White", "Hispanic", "Black", "Asian/Pacific Islander",
-          "Other"],
-      y: [whiteGenderStops, hispanicGenderStops, blackGenderStops, asianPacGenderStops, otherGenderStops],
-      type: "bar"
-    };
-    
-    var data = [trace1];
-    
-    var layout = {
-      title: "Total Number of Police Stops by Ethnicity",
-      xaxis: { title: "Ethnicity"},
-      yaxis: { title: "# of Police Stops"}
-    };
-    
-    Plotly.newPlot("gauge", data, layout);
+
+
+
 
 });
 
